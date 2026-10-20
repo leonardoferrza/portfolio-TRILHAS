@@ -1,4 +1,4 @@
-# 🚀 Meu Primeiro Portfólio - Programa Trilhas
+# Meu Primeiro Portfólio - Programa Trilhas
 
 Bem-vindo ao repositório do meu primeiro portfólio como desenvolvedor Front-end, construído como parte do desafio do **Programa Trilhas**.
 
@@ -33,7 +33,7 @@ O objetivo deste desafio foi desenvolver uma página web simples, responsiva e r
    ```
 3. Abra o arquivo `index.html` em seu navegador de preferência ou utilize a extensão **Live Server** no VS Code.
 
-## 👨‍💻 Autor
+## Autor
 
 **Leonardo Ferreira**
 - [GitHub](https://github.com/leonardoferrza)
