@@ -1,0 +1,189 @@
+/* Definindo as variáveis de cores baseadas no Style Guide do Figma */
+:root {
+    --text-color: #000000;
+    --stroke-color: rgba(0, 0, 0, 0.5);       /* #000000 50% */
+    --surface-color: rgba(0, 0, 0, 0.05);     /* #000000 5% */
+    --surface-hover: rgba(0, 0, 0, 0.02);     /* #000000 2% */
+    --highlight-color: rgba(0, 0, 0, 0.1);    /* #000000 10% */
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+    background-image: url('assets/bg-desktop-light.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container central que segura todo o conteúdo */
+.container {
+    width: 100%;
+    max-width: 400px; /* Largura padrão para mobile/cards */
+    padding: 24px;
+    text-align: center;
+}
+
+/* --- Avatar --- */
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px dashed var(--stroke-color); 
+    object-fit: cover;
+    margin-bottom: 16px;
+    padding: 4px; /* Espaçamento interno entre a foto e a borda */
+}
+
+/* --- Tipografia --- */
+.text-md {
+    font-size: 16px;
+    font-weight: 500; /* Medium */
+    line-height: 24px;
+    margin-bottom: 8px;
+}
+
+.text-sm {
+    font-size: 14px;
+    font-weight: 400; /* Regular */
+    line-height: 24px;
+    margin-bottom: 32px;
+}
+
+/* --- Botões --- */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Espaço entre os botões */
+    margin-bottom: 32px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px 24px;
+    background-color: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px; /* Cantos arredondados */
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--surface-hover);
+}
+
+/* --- Links Sociais --- */
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.social a {
+    color: var(--text-color);
+    transition: transform 0.2s ease;
+}
+
+.social a:hover {
+    transform: scale(1.1); /* Um efeitinho sutil ao passar o mouse */
+}
+
+/* --- Estilos da página "Sobre Mim" --- */
+.about-content {
+    background-color: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 32px;
+    text-align: left; /* Alinhamento à esquerda fica melhor para blocos de texto */
+}
+
+.about-content p {
+    margin-bottom: 16px;
+    color: var(--text-color);
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Estilos da página Projetos --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Cria duas colunas do mesmo tamanho */
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.project-card {
+    background-color: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-img {
+    width: 100%;
+    aspect-ratio: 16/9; /* Mantém a proporção retangular da imagem */
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    background-color: var(--highlight-color); /* Fundo caso a imagem não carregue */
+}
+
+/* O link "Acessar projeto" sugerido no Style Guide */
+.btn-link {
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: underline;
+    margin-top: auto; /* Empurra o botão para o fundo do cartão */
+    transition: opacity 0.3s ease;
+}
+
+/* O link "Acessar projeto" com a seta */
+.btn-link {
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none; /* Remove o sublinhado geral para não afetar a seta */
+    margin-top: auto; 
+    display: inline-flex;
+    align-items: center;
+    gap: 6px; /* Espaço entre o texto e a seta */
+    transition: opacity 0.3s ease;
+}
+
+/* Aplica o sublinhado apenas ao texto, tal como no design */
+.btn-link .text-underline {
+    text-decoration: underline;
+}
+
+.btn-link:hover {
+    opacity: 0.7;
+}
+
+/* Responsividade: Se o ecrã for muito pequeno, os cartões ficam um debaixo do outro */
+@media (max-width: 360px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
